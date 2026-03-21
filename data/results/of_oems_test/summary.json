@@ -1,0 +1,86 @@
+{
+  "OF-1 case생성": {
+    "scenario": "OF-1 case생성",
+    "status": "pass",
+    "details": {
+      "files_count": 9,
+      "has_solver_in_controlDict": true,
+      "has_nu_in_transport": true
+    }
+  },
+  "OF-2 blockMesh+solver": {
+    "scenario": "OF-2 blockMesh+solver",
+    "status": "pass",
+    "details": {
+      "convergence": true,
+      "iterations": 58,
+      "pressure_drop_pa": 0.0,
+      "max_velocity_m_s": 0.0,
+      "residuals": {
+        "Ux": 3.631519e-09,
+        "Uy": 2.5981247e-08,
+        "Uz": 4.1020088e-08,
+        "p": 4.4423758e-07
+      }
+    }
+  },
+  "OF-3 결과파싱": {
+    "scenario": "OF-3 결과파싱",
+    "status": "pass",
+    "details": {
+      "convergence": true,
+      "iterations": true,
+      "has_residuals": true,
+      "solver_time": true,
+      "residuals": {
+        "Ux": 1.1e-07,
+        "Uy": 9.5e-08,
+        "p": 8.7e-07
+      }
+    }
+  },
+  "EM-1 입력생성": {
+    "scenario": "EM-1 입력생성",
+    "status": "pass",
+    "details": {
+      "has_openems_import": true,
+      "has_csxcad_import": true,
+      "has_substrate_er": true,
+      "has_trace_width": true,
+      "has_freq": true,
+      "has_port": true,
+      "has_boundary": true,
+      "has_result_save": true
+    }
+  },
+  "EM-2 결과파싱": {
+    "scenario": "EM-2 결과파싱",
+    "status": "pass",
+    "details": {
+      "convergence": true,
+      "s11_db": true,
+      "s21_db": true,
+      "impedance_ohm": true,
+      "timesteps": true
+    }
+  },
+  "EM-3 검증로직": {
+    "scenario": "EM-3 검증로직",
+    "status": "pass",
+    "details": {
+      "good_convergence": true,
+      "good_return_loss": true,
+      "good_impedance": true,
+      "bad_return_loss_warning": true,
+      "bad_impedance_fail": true
+    }
+  },
+  "EM-4 healthcheck": {
+    "scenario": "EM-4 healthcheck",
+    "status": "pass",
+    "details": {
+      "available": false,
+      "no_error": true
+    }
+  }
+}

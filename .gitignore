@@ -1,0 +1,42 @@
+# 설정
+config.json
+
+# 환경
+.env
+.venv/
+__pycache__/
+*.pyc
+
+# 데이터 (대용량)
+data/work/
+data/snapshots/
+data/results/*.vtu
+data/results/*.vtk
+data/results/*.frd
+
+# Fusion 애드인 통신
+adapters/fusion360/addin/.comm/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.claude/
+
+# Archives
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# mypy
+.mypy_cache/
+
+# ruff
+.ruff_cache/

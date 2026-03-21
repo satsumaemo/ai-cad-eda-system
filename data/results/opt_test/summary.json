@@ -1,0 +1,59 @@
+{
+  "T-1 열최적화": {
+    "scenario": "T-1 열최적화",
+    "status": "pass",
+    "details": {
+      "passed": true,
+      "iterations": 8,
+      "initial_size": "20x20x3mm",
+      "final_size": "73.8x73.8x8.6mm",
+      "deltas_count": 7,
+      "physical_limit": false,
+      "final_temp_c": 99.53
+    }
+  },
+  "T-2 구조최적화": {
+    "scenario": "T-2 구조최적화",
+    "status": "pass",
+    "details": {
+      "passed": true,
+      "iterations": 1,
+      "initial_thickness_mm": 1,
+      "final_thickness_mm": 1,
+      "deltas_count": 0,
+      "final_sf": 858836.73,
+      "final_disp_mm": 3e-06
+    }
+  },
+  "T-3 물리한계": {
+    "scenario": "T-3 물리한계",
+    "status": "pass",
+    "details": {
+      "passed_sim": false,
+      "physical_limit_reached": true,
+      "iterations": 8,
+      "suggestions": [
+        "재질을 알루미늄(167 W/mK) 또는 구리(385 W/mK)로 변경",
+        "강제대류 냉각 적용 (htc=50~100 W/m²K)",
+        "히트싱크 핀 추가로 방열 면적 확대"
+      ],
+      "final_size": "52.0x52.0mm",
+      "final_temp_c": 416.3
+    }
+  },
+  "T-4 오케스트레이터": {
+    "scenario": "T-4 오케스트레이터",
+    "status": "pass",
+    "details": {
+      "parsed_steps": [
+        "1.create_rectangle_sketch",
+        "2.extrude",
+        "3.export_step",
+        "4.run_thermal_analysis"
+      ],
+      "has_thermal": true,
+      "has_optimize_intent": true,
+      "thermal_params_ok": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+# 도구 등록/설정 (플러그인 레지스트리)
+# 새 도구 추가 시 여기에 등록하면 오케스트레이터가 자동 인식
+
+adapters:
+  fusion360:
+    module: adapters.fusion360.adapter
+    class: Fusion360Adapter
+    enabled: true
+    bridge_url: "http://127.0.0.1:18080"
+    timeout: 60
+    retry:
+      max_attempts: 3
+      backoff_seconds: 5
+    health_monitor:
+      check_interval: 10
+      heartbeat_timeout: 30
+      max_restart_attempts: 3
+
+  # Stage 2 어댑터 (kicad, calculix, openfoam, openems, elmer, paraview)는
+  # _stage2_modules/로 이동됨. 복원 시 해당 디렉토리에서 다시 등록.
+
+  inventor:
+    module: adapters.inventor.adapter
+    class: InventorAdapter
+    enabled: false  # 후속 개발
+    connection:
+      type: com
+    timeout: 300
+    retry:
+      max_attempts: 3
+      backoff_seconds: 5
+
+pipeline:
+  max_iterations: 10
+  snapshot_on_change: true
+  parallel_independent: true
+  checkpoint_interval: 1  # 매 단계 체크포인트
+
+orchestrator:
+  max_tokens: 8192
+  temperature: 0.0
+  confidence_thresholds:
+    auto_execute: 0.9
+    confirm_interpretation: 0.6
+
+# LLM 프로바이더 설정
+# provider: "gemini" (기본) 또는 "claude"
+llm:
+  provider: gemini
+  gemini:
+    model: gemini-2.5-flash
+    max_tokens: 8192
+  claude:
+    model: claude-sonnet-4-20250514
+    max_tokens: 8192

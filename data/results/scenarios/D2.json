@@ -1,0 +1,9 @@
+{
+  "scenario": "D2",
+  "status": "pass",
+  "details": {
+    "drc_errors": 0,
+    "board_size": "100x80mm",
+    "layers": 4
+  }
+}

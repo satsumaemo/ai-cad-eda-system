@@ -1,0 +1,5 @@
+-r orchestrator.txt
+-r fusion360.txt
+-r kicad.txt
+-r simulation.txt
+-r dev.txt

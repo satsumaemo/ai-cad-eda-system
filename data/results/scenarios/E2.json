@@ -1,0 +1,20 @@
+{
+  "scenario": "E2",
+  "status": "pass",
+  "details": {
+    "parsed_steps": [
+      "1.create_rectangle_sketch",
+      "2.extrude",
+      "3.export_step",
+      "4.run_thermal_analysis"
+    ],
+    "has_thermal_analysis": true,
+    "thermal_params": [
+      "step_file_path",
+      "heat_sources",
+      "material",
+      "boundary_conditions",
+      "temperature_limit_c"
+    ]
+  }
+}

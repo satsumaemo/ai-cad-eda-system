@@ -1,0 +1,10 @@
+{
+  "scenario": "B1",
+  "status": "pass",
+  "details": {
+    "max_stress_mpa": 0.0,
+    "max_displacement_mm": 2.9e-05,
+    "safety_factor": 179275.2,
+    "convergence": true
+  }
+}

@@ -1,0 +1,3 @@
+-r base.txt
+# pcbnew is bundled with KiCad installation, not installable via pip
+# kicad-python>=0.1.0  # for KiCad 9+ IPC API

@@ -1,0 +1,9 @@
+{
+  "scenario": "A4",
+  "status": "pass",
+  "details": {
+    "actual_volume_mm3": 29000.0,
+    "expected_volume_mm3": 29000,
+    "diff_pct": 0.0
+  }
+}

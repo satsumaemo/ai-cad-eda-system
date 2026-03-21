@@ -1,0 +1,9 @@
+{
+  "scenario": "A5",
+  "status": "pass",
+  "details": {
+    "body_count": 1,
+    "total_holes": 7,
+    "note": "중앙홀 1개 + M4 홀 6개 생성 완료"
+  }
+}

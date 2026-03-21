@@ -1,0 +1,195 @@
+{
+  "tools": [
+    {
+      "name": "create_rectangle_sketch",
+      "description": "평면에 사각형 스케치 생성",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "plane": { "type": "string", "enum": ["xy", "xz", "yz"] },
+          "x_mm": { "type": "number" },
+          "y_mm": { "type": "number" },
+          "width_mm": { "type": "number" },
+          "height_mm": { "type": "number" }
+        },
+        "required": ["plane", "x_mm", "y_mm", "width_mm", "height_mm"]
+      }
+    },
+    {
+      "name": "create_circle_sketch",
+      "description": "평면에 원형 스케치 생성",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "plane": { "type": "string", "enum": ["xy", "xz", "yz"] },
+          "center_x_mm": { "type": "number" },
+          "center_y_mm": { "type": "number" },
+          "radius_mm": { "type": "number" }
+        },
+        "required": ["plane", "center_x_mm", "center_y_mm", "radius_mm"]
+      }
+    },
+    {
+      "name": "extrude",
+      "description": "스케치를 돌출하여 3D 바디 생성",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "profile_index": { "type": "integer" },
+          "distance_mm": { "type": "number" },
+          "operation": { "type": "string", "enum": ["new_body", "join", "cut"] },
+          "direction": { "type": "string", "enum": ["positive", "negative", "symmetric"] }
+        },
+        "required": ["distance_mm"]
+      }
+    },
+    {
+      "name": "create_hole",
+      "description": "면에 홀 생성. center_x_mm/center_y_mm는 면 중심 기준 오프셋(0,0 = 면 정중앙). 면 중앙에 홀을 뚫으려면 center_x_mm=0, center_y_mm=0으로 호출.",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "face_id": { "type": "string", "description": "대상 면 ID. 'top'이면 Z+ 최상단면 자동 선택" },
+          "center_x_mm": { "type": "number", "description": "면 중심 기준 X 오프셋 (mm). 0 = 면 중앙" },
+          "center_y_mm": { "type": "number", "description": "면 중심 기준 Y 오프셋 (mm). 0 = 면 중앙" },
+          "diameter_mm": { "type": "number" },
+          "depth_mm": { "type": "number" },
+          "through_all": { "type": "boolean" }
+        },
+        "required": ["face_id", "center_x_mm", "center_y_mm", "diameter_mm"]
+      }
+    },
+    {
+      "name": "rectangular_pattern",
+      "description": "피처를 직사각형 패턴 배열",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "feature_id": { "type": "string" },
+          "axis": { "type": "string", "enum": ["x", "y", "z"] },
+          "count": { "type": "integer" },
+          "spacing_mm": { "type": "number" }
+        },
+        "required": ["feature_id", "axis", "count", "spacing_mm"]
+      }
+    },
+    {
+      "name": "fillet",
+      "description": "모서리에 필렛 적용",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "edge_ids_csv": { "type": "string" },
+          "radius_mm": { "type": "number" },
+          "all_edges": { "type": "boolean" }
+        },
+        "required": ["radius_mm"]
+      }
+    },
+    {
+      "name": "chamfer",
+      "description": "모서리에 챔퍼 적용",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "edge_ids_csv": { "type": "string" },
+          "distance_mm": { "type": "number" },
+          "all_edges": { "type": "boolean" }
+        },
+        "required": ["distance_mm"]
+      }
+    },
+    {
+      "name": "set_parameter",
+      "description": "파라미터 값 설정",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "value": { "type": "number" },
+          "unit": { "type": "string" }
+        },
+        "required": ["name", "value"]
+      }
+    },
+    {
+      "name": "export_step",
+      "description": "STEP 파일로 내보내기",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "output_path": { "type": "string" }
+        },
+        "required": ["output_path"]
+      }
+    },
+    {
+      "name": "export_stl",
+      "description": "STL 파일로 내보내기",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "output_path": { "type": "string" },
+          "refinement": { "type": "string", "enum": ["low", "medium", "high"] }
+        },
+        "required": ["output_path"]
+      }
+    },
+    {
+      "name": "get_design_info",
+      "description": "현재 설계 정보 조회",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "include_parameters": { "type": "boolean" },
+          "include_bodies": { "type": "boolean" }
+        }
+      }
+    },
+    {
+      "name": "get_body_properties",
+      "description": "바디 물리 속성 조회",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "body_id": { "type": "string" }
+        },
+        "required": ["body_id"]
+      }
+    },
+    {
+      "name": "create_component",
+      "description": "새 컴포넌트 생성",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"]
+      }
+    },
+    {
+      "name": "set_material",
+      "description": "바디에 재질 할당",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "body_id": { "type": "string" },
+          "material_name": { "type": "string" }
+        },
+        "required": ["body_id", "material_name"]
+      }
+    },
+    {
+      "name": "execute_script",
+      "description": "Fusion Python 스크립트 실행",
+      "parameters_schema": {
+        "type": "object",
+        "properties": {
+          "script_code": { "type": "string" }
+        },
+        "required": ["script_code"]
+      }
+    }
+  ]
+}

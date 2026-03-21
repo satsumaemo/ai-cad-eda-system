@@ -1,0 +1,6 @@
+-r base.txt
+gmsh>=4.12.0
+numpy>=1.26.0
+ccx2paraview>=3.2.0
+# pythonocc-core>=7.7.0  # recommended via conda: conda install -c conda-forge pythonocc-core
+# foamlib>=0.6.0          # OpenFOAM Python wrapper

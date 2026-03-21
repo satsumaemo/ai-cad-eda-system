@@ -1,0 +1,8 @@
+{
+  "scenario": "D3",
+  "status": "pass",
+  "details": {
+    "gerber_dir_exists": true,
+    "bom_file_exists": true
+  }
+}

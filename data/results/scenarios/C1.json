@@ -1,0 +1,12 @@
+{
+  "scenario": "C1",
+  "status": "pass",
+  "details": {
+    "max_temperature_c": 525.27,
+    "min_temperature_c": 524.63,
+    "thermal_resistance_c_per_w": 0.032,
+    "convergence": true,
+    "gate_passed": false,
+    "expect_fail": true
+  }
+}

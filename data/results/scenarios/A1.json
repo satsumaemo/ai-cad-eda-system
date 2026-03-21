@@ -1,0 +1,9 @@
+{
+  "scenario": "A1",
+  "status": "pass",
+  "details": {
+    "body_count": 1,
+    "total_volume_mm3": 0,
+    "expected_range": "13000-15000"
+  }
+}

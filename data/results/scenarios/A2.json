@@ -1,0 +1,9 @@
+{
+  "scenario": "A2",
+  "status": "pass",
+  "details": {
+    "solid_volume_mm3": 72000.0,
+    "shell_volume_mm3": 0,
+    "is_hollow": true
+  }
+}

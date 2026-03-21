@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>AI 설계 어시스턴트</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <div id="header">
+        <h1>AI 설계 어시스턴트</h1>
+        <div id="connection-status" class="status-dot disconnected" title="연결 확인 중..."></div>
+    </div>
+    <div id="chat-history"></div>
+    <div id="input-area">
+        <textarea id="user-input" rows="1" placeholder="설계 요청을 입력하세요..."></textarea>
+        <button id="send-btn" aria-label="전송">&#9654;</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

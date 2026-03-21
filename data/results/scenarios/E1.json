@@ -1,0 +1,22 @@
+{
+  "scenario": "E1",
+  "status": "pass",
+  "details": {
+    "parsed_steps": [
+      "1.create_rectangle_sketch",
+      "2.extrude",
+      "3.export_step",
+      "4.run_structural_analysis"
+    ],
+    "has_sketch": true,
+    "has_extrude": true,
+    "has_export": true,
+    "has_structural_analysis": true,
+    "analysis_params": [
+      "step_file_path",
+      "material",
+      "loads",
+      "boundary_conditions"
+    ]
+  }
+}

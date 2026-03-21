@@ -1,0 +1,68 @@
+# 단위 변환 매핑
+# 내부 표준: SI (m, kg, s, A, K)
+# 각 도구별 기본 단위와 SI 간 변환 계수
+
+internal_standard: SI
+
+tool_units:
+  fusion360:
+    length: cm       # Fusion 360 내부: cm
+    mass: kg
+    time: s
+    temperature: celsius
+  inventor:
+    length: mm       # Inventor 기본: mm
+    mass: kg
+    time: s
+    temperature: celsius
+  kicad:
+    length: mm       # KiCad: mm
+    mass: kg
+    time: s
+  calculix:
+    length: m        # CalculiX SI 사용 가능
+    mass: kg
+    time: s
+    temperature: kelvin
+    force: N
+    pressure: Pa
+  openfoam:
+    length: m
+    mass: kg
+    time: s
+    temperature: kelvin
+  openems:
+    length: m        # OpenEMS: m
+    frequency: Hz
+    time: s
+  elmer:
+    length: m
+    mass: kg
+    time: s
+    temperature: kelvin
+  gmsh:
+    length: m
+
+conversions:
+  length:
+    m_to_cm: 100.0
+    m_to_mm: 1000.0
+    cm_to_m: 0.01
+    mm_to_m: 0.001
+    in_to_m: 0.0254
+    m_to_in: 39.3701
+    mil_to_m: 0.0000254
+  temperature:
+    celsius_to_kelvin_offset: 273.15
+    fahrenheit_to_celsius_scale: 0.5556
+    fahrenheit_to_celsius_offset: -17.7778
+  pressure:
+    Pa_to_MPa: 1.0e-6
+    MPa_to_Pa: 1.0e+6
+    Pa_to_psi: 0.000145038
+    psi_to_Pa: 6894.76
+  frequency:
+    Hz_to_MHz: 1.0e-6
+    MHz_to_Hz: 1.0e+6
+    Hz_to_GHz: 1.0e-9
+    GHz_to_Hz: 1.0e+9

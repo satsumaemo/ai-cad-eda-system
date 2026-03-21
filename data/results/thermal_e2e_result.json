@@ -1,0 +1,72 @@
+{
+  "step1": {
+    "status": "pass",
+    "step_file": "C:\\Users\\win\\Desktop\\toolbox\\3dai\\data\\results\\thermal_test.step"
+  },
+  "step2": {
+    "status": "pass",
+    "mesh_dir": "C:\\Users\\win\\Desktop\\toolbox\\3dai\\data\\work\\thermal_test\\mesh",
+    "sif_path": "C:\\Users\\win\\Desktop\\toolbox\\3dai\\data\\work\\thermal_test\\case.sif",
+    "mesh_size_bytes": 586660
+  },
+  "step3": {
+    "status": "pass",
+    "sif_path": "C:\\Users\\win\\Desktop\\toolbox\\3dai\\data\\work\\thermal_test\\case.sif"
+  },
+  "step4": {
+    "status": "pass",
+    "returncode": 0
+  },
+  "step5": {
+    "status": "pass",
+    "summary": {
+      "max_temperature_c": 50.07,
+      "min_temperature_c": 49.91,
+      "avg_temperature_c": 50.0,
+      "thermal_resistance_c_per_w": 0.032,
+      "convergence": true,
+      "iterations": 2
+    }
+  },
+  "step6": {
+    "status": "pass",
+    "overall": "success",
+    "checks": [
+      {
+        "name": "max_temperature_c",
+        "status": "success",
+        "value": 50.07,
+        "message": "max_temperature_c = 50.07 <= 100.0 (PASS)"
+      },
+      {
+        "name": "thermal_resistance_c_per_w",
+        "status": "success",
+        "value": 0.032,
+        "message": "thermal_resistance_c_per_w = 0.032 <= 5.0 (PASS)"
+      },
+      {
+        "name": "convergence",
+        "status": "success",
+        "value": true,
+        "message": "convergence = True (기대값 일치)"
+      }
+    ]
+  },
+  "step7": {
+    "status": "pass",
+    "parsed_steps": [
+      "1. fusion360__create_rectangle_sketch",
+      "2. fusion360__extrude",
+      "3. fusion360__export_step",
+      "4. elmer__run_thermal_analysis"
+    ],
+    "thermal_params_keys": [
+      "step_file_path",
+      "heat_sources",
+      "material",
+      "boundary_conditions",
+      "temperature_limit_c"
+    ],
+    "has_all_steps": true
+  }
+}

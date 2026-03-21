@@ -1,0 +1,8 @@
+{
+  "scenario": "D1",
+  "status": "pass",
+  "details": {
+    "drc_errors": 0,
+    "drc_warnings": 0
+  }
+}
